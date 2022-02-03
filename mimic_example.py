@@ -5,6 +5,6 @@ import wfdb
 
 
 
-record = wfdb.rdrecord("/home/ialexia_av/databases/mimicdb-1.0.0.physionet.org/037/03700032")
+record = wfdb.rdrecord("/Users/itzelavila/Documents/PhDMedicalDevices/Databases/physionet.org/files/mimicdb/1.0.0/037/037n")
 
 #wfdb.plot_wfdb(record=record, title='Example signals')
