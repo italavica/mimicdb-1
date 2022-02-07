@@ -6,12 +6,10 @@ def check_sig_name(path):
 		sig_name= fields["sig_name"]
 		if sig_name != None:
 			#print(sig_name, path)
-			response = 1
-			# if ('ABP' in sig_name) and ('PLETH' in sig_name):
-			# 	response=1
-			# 	return response
-			#else:
-			#    pass
+			if ('ABP' in sig_name) and ('PLETH' in sig_name):
+				response=1
+			else:
+			   response = 0
 		else:
 			response =0
 	else:
