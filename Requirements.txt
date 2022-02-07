@@ -1,7 +1,5 @@
 pylint
 pytest
-google
 wfdb
 numpy
-cloudstorage 
-webapp2
+tqdm
