@@ -14,8 +14,10 @@ from check_signal import check_signal
 with open('/Users/itzelavila/Documents/PhDMedicalDevices/Databases/physionet.org/files/mimicdb/1.0.0/RECORDS') as f:
     folder_list = f.readlines()
 f.close()
+
 f_yes = open('ABP_PLETH.txt', 'w')
 f_no = open('NO_ABP_PLETH.txt', 'w')
+
 for folder in tqdm(folder_list):
     path_folder = '/Users/itzelavila/Documents/PhDMedicalDevices/Databases/physionet.org/files/mimicdb/1.0.0/' + folder
     path_folder= str.rstrip(path_folder)
@@ -38,7 +40,7 @@ for folder in tqdm(folder_list):
             with open('NO_ABP_PLETH.txt', 'a') as f_no:
                 f_no.write(path + "\n")    
         path = ""
-        
+
 f_yes.close()
 f_no.close()
 
