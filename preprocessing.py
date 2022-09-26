@@ -5,7 +5,9 @@ from tqdm import tqdm
 
 from functions_preprocessing import flat_lines_check, update_nan_values,plot,remove_flat_records
 
-with open('/Users/itzelavila/Documents/PhDMedicalDevices/Python/mimicdb-1/ABP_PLETH.txt') as f:
+path_records='/Users/itzelavila/Documents/PhD/mimicdb-1/records_raw.txt'
+path_database='/Users/itzelavila/Documents/PhD/databases/mimic-database-1.0.0'
+with open(path_records) as f:
     signals_list = f.readlines()
 f.close()
 nfl= open('noflatlines.txt', 'w')
@@ -19,7 +21,7 @@ print(ex_signal)'''
 
 
 for i in tqdm(signals_list):
-    path= str.rstrip(i)
+    path= path_database+str.rstrip(i)
     #record= wfdb.rdrecord(path,channel_names= ['ABP','PLETH'])
     #wfdb.plot_wfdb(record=record, title='Example signals')
     signal, fields = wfdb.rdsamp(path,channel_names= ['ABP','PLETH']) 

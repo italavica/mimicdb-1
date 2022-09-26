@@ -1,11 +1,12 @@
 import wfdb
 from functions_preprocessing import plot
 
-with open('/Users/itzelavila/Documents/PhDMedicalDevices/Python/mimicdb-1/flatlines.txt') as f:
+with open('/Users/itzelavila/Documents/PhD/mimicdb-1/noflatlines.txt') as f:
     signals_list = f.readlines()
 
-for e in signals_list:
-    path= str.rstrip(e)
+print(len(signals_list))
+for i in range(900,915):
+    path= str.rstrip(signals_list[i])
     signal, fields = wfdb.rdsamp(path,channel_names= ['ABP','PLETH'])   
     ABP = signal[:,0]
     PLETH = signal[:,1]
